@@ -1,0 +1,13 @@
+{
+    "domain":"http://localhost",
+    "port":3000,
+    "cachify":false,
+    "assets":{
+        "/css/style.min.css":[
+            "/css/style.css"
+        ],
+        "/js/site.min.js":[
+            "/js/site.js"
+        ]
+    }
+}

@@ -1,0 +1,26 @@
+!!!
+html(lang='en')
+  head
+    include includes/head
+
+  body
+    .navbar.navbar-inverse.navbar-fixed-top
+        .navbar-inner
+            .container
+
+    #outer-wrapper
+          #wrapper
+            .wrapper-container
+              header(id='masthead')
+                h1 Welcome
+
+              block content
+
+          block footer
+            footer(id='colophon')
+                .row
+                    .span3
+
+
+    | !{cachify_js('/js/site.js')}
+    block scripts
