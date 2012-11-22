@@ -15,6 +15,8 @@ To use to build a new project simply.
 $ mkdir mynewproject
 $ cd grunt-express-bootstrap
 $ grunt-express-bootstrap init
+$ npm install
+$ node app.js
 ```
 
 ## Contributing
