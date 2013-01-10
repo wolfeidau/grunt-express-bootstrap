@@ -9,7 +9,7 @@ Install the module with: `npm install grunt-express-bootstrap -g`
 This module is wraps grunt and includes an init template demonstrating the ability to bootstrap express projects.
 
 ## Examples
-To use to build a new project simply.
+To use to build a new project simply:
 
 ```bash
 $ mkdir mynewproject
@@ -18,6 +18,8 @@ $ grunt-express-bootstrap init
 $ npm install
 $ node app.js
 ```
+
+then visit <http://localhost:3000>.
 
 ## Contributing
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/gruntjs/grunt).
