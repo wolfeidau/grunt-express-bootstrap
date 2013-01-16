@@ -1,19 +1,38 @@
 module.exports = function (app, configurations, express) {
 
     var nconf = require('nconf')
-    var cachify = require('connect-cachify')
+        , cachify = require('connect-cachify')
+        , winston = require('winston')
+
 
     nconf.argv().env().file({ file: 'local.json' })
 
     // load assets node from configuration file.
     var assets = nconf.get('assets') || {}
 
-    // Configuration
+    // Development Configuration
+    app.configure('development', 'test', function(){
+        // Request Logging
+        var logger = new (winston.Logger)({ transports: [ new (winston.transports.Console)({colorize:true}) ] })
+        // register the request logger
+        app.use(require('winston-request-logger').create(logger))
+        app.set('DEBUG', true)
+        app.use(express.errorHandler({ dumpExceptions: true, showStack: true }))
+    })
+
+    // Production Configuration
+    app.configure('production', function(){
+        app.set('DEBUG', false)
+        app.use(express.errorHandler())
+    })
+
+    // Cachify Asset Configuration
     app.use(cachify.setup(assets, {
         root: __dirname + '/public',
         production: nconf.get('cachify')
     }))
 
+    // Global Configuration
     app.configure(function(){
 
         app.set('views', __dirname + '/views')
@@ -25,16 +44,6 @@ module.exports = function (app, configurations, express) {
 
         app.use(app.router)
 
-    })
-
-    app.configure('development', 'test', function(){
-        app.set('DEBUG', true)
-        app.use(express.errorHandler({ dumpExceptions: true, showStack: true }))
-    })
-
-    app.configure('production', function(){
-        app.set('DEBUG', false)
-        app.use(express.errorHandler())
     })
 
     return app

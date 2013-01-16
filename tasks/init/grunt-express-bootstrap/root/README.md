@@ -9,6 +9,7 @@ These project include:
 * [JQuery](http://jquery.com/)
 * [bower](http://twitter.github.com/bower/)
 * [jade](http://jade-lang.com/)
+* [winston-request-logger](https://github.com/wolfeidau/winston-request-logger)
 
 
 ## Getting Started

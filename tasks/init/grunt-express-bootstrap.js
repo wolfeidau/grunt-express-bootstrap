@@ -40,6 +40,8 @@ exports.template = function(grunt, init, done) {
         // specify the project dependencies.
         props.dependencies = {
             "connect-cachify": "*",
+            "winston": "*",
+            "winston-request-logger": "*",
             "jade": "*",
             "nconf": "*",
             "express": "*",
