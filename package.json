@@ -1,7 +1,7 @@
 {
     "name":"grunt-express-bootstrap",
     "description":"Bootstrap express projects with grunt.",
-    "version":"0.1.0",
+    "version":"0.1.1",
     "homepage":"https://github.com/wolfeidau/grunt-express-bootstrap",
     "author":{
         "name":"Mark Wolfe",

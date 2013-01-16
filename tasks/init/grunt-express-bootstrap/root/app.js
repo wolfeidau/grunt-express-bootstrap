@@ -1,4 +1,3 @@
-"use strict"
 var express = require('express')
 var configurations = module.exports
 var app = express()
