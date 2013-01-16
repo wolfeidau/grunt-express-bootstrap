@@ -7,5 +7,5 @@
  */
 
 exports.awesome = function() {
-    return 'awesome';
-};
+    return 'awesome'
+}

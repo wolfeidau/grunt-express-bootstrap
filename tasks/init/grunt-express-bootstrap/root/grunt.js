@@ -12,6 +12,8 @@ module.exports = function(grunt) {
         },
         jshint: {
             options: {
+                asi: true,
+                laxcomma: true,
                 curly: true,
                 eqeqeq: true,
                 immed: true,
@@ -22,7 +24,16 @@ module.exports = function(grunt) {
                 undef: true,
                 boss: true,
                 eqnull: true,
-                node: true
+                node: true,
+                "strict":false,
+                "predef":[
+                    "describe", // Used by mocha
+                    "it", // Used by mocha
+                    "before", // Used by mocha
+                    "beforeEach", // Used by mocha
+                    "after", // Used by mocha
+                    "afterEach"      // Used by mocha
+                ]
             },
             globals: {
                 exports: true

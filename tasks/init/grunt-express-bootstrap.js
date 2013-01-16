@@ -49,9 +49,10 @@ exports.template = function(grunt, init, done) {
 
         // specify the project dependencies.
         props.devDependencies = {
-            "should": "*",
-            "grunt-simple-mocha": "*",
-            "mocha": "*"
+            "grunt-simple-mocha":"~0.2.0",
+            "mocha":"~1.6.0",
+            "should":"~1.2.0",
+            "grunt":"~0.3.17"
         }
 
         // Files to copy (and process).
