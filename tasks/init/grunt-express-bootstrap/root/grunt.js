@@ -1,4 +1,4 @@
-module.exports = function(grunt) {
+module.exports = function (grunt) {
 
     // Project configuration.
     grunt.initConfig({
@@ -25,8 +25,8 @@ module.exports = function(grunt) {
                 boss: true,
                 eqnull: true,
                 node: true,
-                "strict":false,
-                "predef":[
+                "strict": false,
+                "predef": [
                     "describe", // Used by mocha
                     "it", // Used by mocha
                     "before", // Used by mocha

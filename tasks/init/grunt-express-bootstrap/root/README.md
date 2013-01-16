@@ -3,11 +3,25 @@
 {%= description %}
 
 ## Getting Started
-Install the module with: `npm install {%= name %}`
 
-```javascript
-var {%= js_safe_name %} = require('{%= name %}');
-{%= js_safe_name %}.awesome(); // "awesome"
+Once created you can set up your web application project by running the following commands.
+
+* Firstly run npm to install modules.
+
+```
+npm install
+```
+
+* Run bower to install UI dependencies.
+
+```
+bower install
+```
+
+* Start the application.
+
+```
+node app.js
 ```
 
 ## Documentation

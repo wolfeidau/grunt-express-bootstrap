@@ -4,23 +4,29 @@ html(lang='en')
     include includes/head
 
   body
-    .navbar.navbar-inverse.navbar-fixed-top
+    .navbar.navbar-fixed-top
         .navbar-inner
             .container
+                a.btn.btn-navbar(data-toggle="collapse", data-target=".nav-collapse")
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.brand {%= name %}
+                .nav-collapse
+                ul.nav
+                    li.active
+                        a(href="/") Home
 
-    #outer-wrapper
-          #wrapper
-            .wrapper-container
-              header(id='masthead')
-                h1 Welcome
+    .container
 
-              block content
+        block content
 
-          block footer
-            footer(id='colophon')
-                .row
-                    .span3
+        block footer
+            footer.page-footer
+                p &copy; Company 2012
 
 
+    | !{cachify_js('/components/jquery/jquery.min.js')}
+    | !{cachify_js('/components/bootstrap/docs/assets/js/bootstrap.min.js')}
     | !{cachify_js('/js/site.js')}
     block scripts
