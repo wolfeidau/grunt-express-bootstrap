@@ -5,17 +5,16 @@
  * Licensed under the MIT license.
  * https://github.com/wolfeidau/grunt-express-bootstrap/blob/master/LICENSE-MIT
  */
-'use strict';
 
 // Basic template description.
-exports.description = 'Create a Node.js module, including Nodeunit unit tests.';
+exports.description = 'Create a Node.js module, including Nodeunit unit tests.'
 
 // Template-specific notes to be displayed before question prompts.
 exports.notes = '_Project name_ shouldn\'t contain "node" or "js" and should ' +
-    'be a unique ID not already in use at search.npmjs.org.';
+    'be a unique ID not already in use at search.npmjs.org.'
 
 // Any existing file or directory matching this wildcard will cause a warning.
-exports.warnOn = '*';
+exports.warnOn = '*'
 
 // The actual init template.
 exports.template = function(grunt, init, done) {
@@ -36,7 +35,7 @@ exports.template = function(grunt, init, done) {
         grunt.helper('prompt_for', 'main'),
         grunt.helper('prompt_for', 'npm_test')
     ], function(err, props) {
-        props.keywords = [];
+        props.keywords = []
 
         // specify the project dependencies.
         props.dependencies = {
@@ -46,29 +45,29 @@ exports.template = function(grunt, init, done) {
             "express": "*",
             "uglify-js": "*",
             "uglifycss": "*"
-        };
+        }
 
         // specify the project dependencies.
         props.devDependencies = {
             "should": "*",
             "grunt-simple-mocha": "*",
             "mocha": "*"
-        };
+        }
 
         // Files to copy (and process).
-        var files = init.filesToCopy(props);
+        var files = init.filesToCopy(props)
 
         // Add properly-named license files.
-        init.addLicenseFiles(files, props.licenses);
+        init.addLicenseFiles(files, props.licenses)
 
         // Actually copy (and process) files.
-        init.copyAndProcess(files, props);
+        init.copyAndProcess(files, props)
 
         // Generate package.json file.
-        init.writePackageJSON('package.json', props);
+        init.writePackageJSON('package.json', props)
 
         // All done!
-        done();
-    });
+        done()
+    })
 
-};
+}

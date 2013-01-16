@@ -1,5 +1,3 @@
-'use strict';
-
 module.exports = function (grunt) {
 
     // Project configuration.
@@ -11,7 +9,9 @@ module.exports = function (grunt) {
 
         jshint:{
             options:{
+                asi: true,
                 curly:true,
+                laxcomma: true,
                 eqeqeq:true,
                 immed:true,
                 latedef:true,
@@ -21,7 +21,8 @@ module.exports = function (grunt) {
                 undef:true,
                 boss:true,
                 eqnull:true,
-                node:true
+                node:true,
+                "strict":false
             },
             globals:{
                 exports:true
