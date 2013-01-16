@@ -1,6 +1,6 @@
 {
     "name":"grunt-express-bootstrap",
-    "description":"Bootstrap express projects with grunt.",
+    "description":"Bootstraps express web applications using grunt, bower and twitter bootstrap.",
     "version":"0.1.1",
     "homepage":"https://github.com/wolfeidau/grunt-express-bootstrap",
     "author":{
@@ -26,14 +26,11 @@
     "engines":{
         "node":">= 0.6.0"
     },
-    "scripts":{
-        "test":"grunt test"
-    },
     "dependencies":{
         "grunt":"~0.3.17"
     },
     "devDependencies":{
         "grunt":"~0.3.17"
     },
-    "keywords":["gruntplugin"]
+    "keywords":["gruntplugin", "bootstrap", "express"]
 }
