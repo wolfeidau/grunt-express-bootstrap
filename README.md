@@ -35,8 +35,10 @@ Then visit <http://localhost:3000>.
 In lieu of a formal styleguide, take care to maintain the existing coding style. Add unit tests for any new or changed functionality. Lint and test your code using [grunt](https://github.com/gruntjs/grunt).
 
 ## Release History
-0.1.0 Initial proof of concept.
-0.1.1 Added twitter bootstrap, JQuery and a bunch of stuff to make this more usable.
+
+* 0.1.0 Initial proof of concept.
+* 0.1.1 Added twitter bootstrap, JQuery and a bunch of stuff to make this more usable.
+* 0.1.2 Fixed issues with bower files.
 
 ## License
 Copyright (c) 2012 Mark Wolfe  
