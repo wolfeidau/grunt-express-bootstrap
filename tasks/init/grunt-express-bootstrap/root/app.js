@@ -4,8 +4,11 @@ var express = require('express')
     , nconf = require('nconf')
     , winston = require('winston')
 
+// Logging
+var logger = new (winston.Logger)({ transports: [ new (winston.transports.Console)({colorize:true}) ] })
+
 // load the settings
-require('./settings')(app, configurations, express)
+require('./settings')(app, configurations, express, logger)
 
 // merge nconf overrides with the configuration file.
 nconf.argv().env().file({ file: 'local.json' })
@@ -13,6 +16,6 @@ nconf.argv().env().file({ file: 'local.json' })
 // Routes
 require('./routes')(app)
 
-winston.info('listening on %s', nconf.get('port'))
+logger.info('listening on', nconf.get('port'))
 
 app.listen(process.env.PORT || nconf.get('port'))

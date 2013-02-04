@@ -1,7 +1,7 @@
 {
     "name":"grunt-express-bootstrap",
     "description":"Bootstraps express web applications using grunt, bower and twitter bootstrap.",
-    "version":"0.1.2",
+    "version":"0.1.3",
     "homepage":"https://github.com/wolfeidau/grunt-express-bootstrap",
     "author":{
         "name":"Mark Wolfe",

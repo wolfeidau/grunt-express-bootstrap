@@ -1,9 +1,9 @@
-module.exports = function (app, configurations, express) {
+module.exports = function (app, configurations, express, logger) {
 
     var nconf = require('nconf')
         , cachify = require('connect-cachify')
         , winston = require('winston')
-
+        , requestLogger = require('winston-request-logger')
 
     nconf.argv().env().file({ file: 'local.json' })
 
@@ -12,10 +12,8 @@ module.exports = function (app, configurations, express) {
 
     // Development Configuration
     app.configure('development', 'test', function(){
-        // Request Logging
-        var logger = new (winston.Logger)({ transports: [ new (winston.transports.Console)({colorize:true}) ] })
         // register the request logger
-        app.use(require('winston-request-logger').create(logger))
+        app.use(requestLogger.create(logger))
         app.set('DEBUG', true)
         app.use(express.errorHandler({ dumpExceptions: true, showStack: true }))
     })
